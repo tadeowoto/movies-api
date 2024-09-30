@@ -13,4 +13,4 @@ MoviesRouter.post("/", MovieController.createMovie);
 
 MoviesRouter.patch("/:id", MovieController.updateMovie);
 
-export { MoviesRouter };
+export default MoviesRouter ;

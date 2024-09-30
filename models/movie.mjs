@@ -1,7 +1,8 @@
-import { movies } from "../data/movies.mjs" assert { type: "json" };
-import crypto from 'node:crypto';
 
-export class MovieModel {
+import crypto from 'node:crypto';
+import movies from '../movies.json' assert { type: 'json' }  ;
+
+export default class MovieModel {
   static async getAllMovies  ( {genre} ) {
     
     
