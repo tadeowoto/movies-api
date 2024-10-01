@@ -1,12 +1,13 @@
-import  MovieModel  from "../models/movie.mjs";
+//import  MovieModel  from "../models/movie.mjs";
+import  MovieModel  from "../models/mysql/mysql/movie.mjs";
 import { validateMovie, validatePartialMovie } from "../schemas/movies.mjs";
 
 
 export class MovieController {
     static async getMovies(req, res) {
         try {
-            const genre = req.query;
-            const movies = await MovieModel.getAllMovies(genre);
+            const { genre } = req.query;
+            const movies = await MovieModel.getAllMovies({ genre });
             res.json(movies);
           } catch (error) {
             res.status(500).json({ error: error.message });
